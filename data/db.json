@@ -1,0 +1,25 @@
+{
+  "project": [
+    {
+      "id": 1,
+      "title": "ToDo App",
+      "details": "Skate ipsum dolor sit amet, Jerry Hsu pump mini ramp locals front foot impossible casper nosepicker. Gnarly mini ramp half-flip boardslide shoveit quarter pipe. Aerial handplant tailslide rad ho-ho face plant. Powell Peralta 540 nose-bump 900 bearings gap powerslide.",
+      "complete": true,
+      "due-date": "12-06-2021"
+    },
+    {
+      "id": 4,
+      "title": "Travel Agency App",
+      "details": "Skate ipsum dolor sit amet, Jerry Hsu pump mini ramp locals front foot impossible casper nosepicker. Gnarly mini ramp half-flip boardslide shoveit quarter pipe. Aerial handplant tailslide rad ho-ho face plant. Powell Peralta 540 nose-bump 900 bearings gap powerslide.",
+      "complete": false,
+      "due-date": "22-06-2021"
+    },
+    {
+      "id": 1,
+      "title": "Quohi",
+      "details": "Skate ipsum dolor sit amet, Jerry Hsu pump mini ramp locals front foot impossible casper nosepicker. Gnarly mini ramp half-flip boardslide shoveit quarter pipe. Aerial handplant tailslide rad ho-ho face plant. Powell Peralta 540 nose-bump 900 bearings gap powerslide.",
+      "complete": false,
+      "due-date": "22-07-2021"
+    }
+  ]
+}
