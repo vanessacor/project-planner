@@ -1,11 +1,11 @@
 <template>
-  <NavBar />
+  <Header />
   <router-view />
 </template>
 <script>
-import NavBar from "./components/NavBar.vue";
+import Header from "./components/Header.vue";
 export default {
-  components: { NavBar },
+  components: { Header },
 };
 </script>
 <style>

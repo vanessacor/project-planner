@@ -2,6 +2,12 @@
 
 > A learning project following this course on [Udemy - Net Ninja course ](https://www.udemy.com/share/101XhyAEUaeF1SRnQF/)
 
+## Learning Outcomes
+- Options Api
+- Vue Router - how to setup and use Vue Router
+- How and when to use Computed properties
+- Events modifiers
+
 ## Project setup
 
 ```
@@ -20,6 +26,18 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
+### Setup Faker Api
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Install Json Server
+
+   ```
+   sudo npm install -g json-server
+   ```
+
+Run json server
+
+    ```
+    json-server --watch data/db.json
+    ```
+
+
