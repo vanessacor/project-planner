@@ -4,22 +4,21 @@ class ApiClient {
   static getAllProjects() {
     return http.get("/projects");
   }
-  static getProject(id) {
+  static getProjectById(id) {
     return http.get(`/projects/${id}`);
   }
-  static getProject(id) {
-    return http.get(`/projects/${id}`);
-  }
-
-  static createProject(project) {
-    return http.post("/projects/", project);
-  }
-
   static deleteProject(id) {
     return http.delete(`/projects/${id}`);
   }
-  static updateProject(project) {
-    return http.put(`/projects/${project.id}`, project);
+  static toggleStatus(id, data) {
+    return http.patch(`/projects/${id}`, data);
+  }
+  static createProject(data) {
+    return http.post("/projects", data);
+  }
+  static updateProject(id, data) {
+    console.log(data.complete);
+    return http.put(`/projects/${id}`, data);
   }
 }
 

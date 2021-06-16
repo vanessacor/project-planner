@@ -1,7 +1,16 @@
 <template>
-  <article class="project" @click="toggleDetails">
+  <article class="project" :class="{ complete: project.complete }">
     <div class="actions">
-      <h3>{{ project.title }}</h3>
+      <h3 @click="toggleDetails">{{ project.title }}</h3>
+      <div>
+        <router-link
+          class="material-icons"
+          :to="{ name: 'EditProject', params: { id: project.id } }"
+          >edit
+        </router-link>
+        <span class="material-icons" @click="deleteProject"> delete </span>
+        <span class="material-icons tick" @click="toggleCompleted"> done </span>
+      </div>
     </div>
 
     <div v-if="showDetails" class="details">
@@ -11,6 +20,7 @@
 </template>
 
 <script>
+import ApiClient from "../services/ApiClient";
 export default {
   props: ["project"],
 
@@ -22,6 +32,26 @@ export default {
   methods: {
     toggleDetails() {
       this.showDetails = !this.showDetails;
+    },
+
+    async deleteProject() {
+      try {
+        await ApiClient.deleteProject(this.project.id);
+        this.$emit("delete", this.project.id);
+      } catch (error) {
+        console.log(error.message);
+      }
+    },
+
+    async toggleCompleted() {
+      try {
+        await ApiClient.toggleStatus(this.project.id, {
+          complete: !this.project.complete,
+        });
+        this.$emit("complete", this.project.id);
+      } catch (error) {
+        console.log(error.message);
+      }
     },
   },
 };
@@ -38,5 +68,28 @@ export default {
 }
 h3 {
   cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.material-icons {
+  font-size: 24px;
+  margin-left: 10px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.material-icons:hover {
+  color: #094067;
+}
+.project.complete {
+  border-left: 4px solid #00ce89;
+}
+.project.complete .tick {
+  color: #00ce89;
 }
 </style>
